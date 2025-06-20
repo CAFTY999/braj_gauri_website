@@ -1,0 +1,127 @@
+/* styles.css */
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #f5f0e9;
+    color: #555;
+}
+
+/* Section Styling */
+.question-section {
+    background-color: #f5f0e9;
+}
+
+.question-container {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.question-text {
+    text-align: left;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.question-text p:first-child {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #555;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.question-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    color: #333;
+}
+
+.question-text p:last-child {
+    font-size: 1.125rem;
+    color: #666;
+    max-width: 750px;
+    word-wrap: break-word;
+}
+
+/* Grid Layout for Questions */
+.question-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.question {
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: #f5f0e9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 1s ease, box-shadow 1s ease;
+}
+
+.question:hover {
+    background-color: #f5f0e9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.question h4 {
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.question p {
+    color: #555;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-top: 1rem;
+    max-height: 0; /* Initially hide the answer */
+    overflow: hidden; /* Hide the overflowing content */
+    transition: max-height 3s ease; /* Smooth transition for height change */
+}
+
+.arrow {
+    transition: transform 0.8s ease;
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-left: 2px solid #555;
+    border-bottom: 2px solid #555;
+    transform: rotate(-45deg);
+}
+
+.question.active p {
+    max-height: 1000px; /* Allow enough height for the content */
+}
+
+.question.active .arrow {
+    transform: rotate(90deg);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .question-grid {
+        display: block;
+    }
+
+    .question {
+        margin-bottom: 1rem;
+    }
+
+    .question h4 {
+        font-size: 1.2rem;
+    }
+}

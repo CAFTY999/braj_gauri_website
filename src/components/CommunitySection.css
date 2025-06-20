@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f0e8;
+}
+
+.section {
+  min-height: 1100px;
+  padding: 60px 20px;
+  flex-direction: row;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+
+.text-box {
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+.main-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  text-align: left;
+  color: #5e5e5e;
+}
+
+.highlight {
+  color: #010101;
+}
+
+.normal {
+  color: #6b6f76;
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #5e5e5e;
+  text-align: left;
+  background-color: #f0f5f8;
+  padding: 12px;
+  border-left: 3px solid #dcdcdc;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px; /* increased spacing for cleaner layout */
+  margin-bottom: 32px;
+}
+
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  min-height: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-button {
+  background-color: #4b4f4f;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.card-button:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;  /* Ensures image fills space while preserving aspect */
+  border-radius: 12px;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+.image-placeholder {
+  width: 100%;
+  height: 180px;
+  background-color: #e3e7ea;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .card {
+    flex: 0 0 90%;
+    scroll-snap-align: start;
+    min-width: 90%;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: -10px;
+    margin-bottom: 40px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #c2c2c2;
+    transition: background-color 0.3s;
+  }
+
+  .dot.active {
+    background-color: #4b4f4f;
+  }
+  
+}
+
